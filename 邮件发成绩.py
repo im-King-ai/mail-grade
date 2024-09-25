@@ -6,10 +6,10 @@ import ddddocr
 import smtplib
 from email.mime.text import MIMEText
 
-# 邮件发送者和接收者的邮箱地址及密码
-SENDER_EMAIL = '3362863893@qq.com'
-SENDER_PASSWORD = 'kfydimmtetqmdadi'
-RECEIVER_EMAIL = '1533068067@qq.com'
+# 邮件发送者和接收者的邮箱地址及邮箱授权码
+SENDER_EMAIL = ''
+SENDER_PASSWORD = ''
+RECEIVER_EMAIL = ''
 
 # 存储上次获取的成绩
 last_grades = []
@@ -118,8 +118,8 @@ def monitor_grades(user):
     except Exception as e:
         print(f"成绩监控时发生错误: {e}")
 
-# 初始化用户
-user = User("23250601316", "xukai8088A")
+# 初始化用户，此处填教务系统账号和密码
+user = User("", "")
 
 # 添加定时任务
 schedule.every(1).seconds.do(monitor_grades, user)
